@@ -3,12 +3,15 @@ class SessionsController < ApplicationController
     @user = User.new
   end
 
+  def show
+  end
+
   def create
     @user = User.find_by(session_params)
 
     if @user
       session[:user_id] = @user.id
-      redirect_to root_path, notice: "Logged in"
+      redirect_to user_path(@user), notice: "Logged in"
     else
       flash.now[:alert] = "Invalid Username!"
       @user = User.new

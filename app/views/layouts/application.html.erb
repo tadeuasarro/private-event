@@ -29,12 +29,17 @@
      <div class="d-flex justify-content-end my-2">
       <% if user_sign_in? %>
         <div class="mx-3">
-          <span class="btn"><%= current_user.username %></span>
+          <%= link_to current_user.username, user_path(current_user), class: 'btn btn-success' %>
         </div>
         <div class="my -3 ml-3 mr-5">
           <%= link_to "Log out", sessions_destroy_path, class: 'btn btn-warning' %>
         </div>
+      <% else %>
+        <div class="my -3 ml-3 mr-5">
+          <%= link_to "Log in", sessions_new_path, class: 'btn btn-success' %>
+        </div>
       <% end %>
+
      </div>
     <%= yield %>
 
