@@ -29,6 +29,9 @@
      <div class="d-flex justify-content-end my-2">
       <% if user_sign_in? %>
         <div class="mx-3">
+          <%= link_to "Home", root_path, class: 'btn btn-primary' %>
+        </div>
+        <div class="mx-3">
           <%= link_to "Create new event", new_event_path, class: 'btn btn-light' %>
         </div>
         <div class="mx-3">

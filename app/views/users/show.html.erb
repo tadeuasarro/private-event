@@ -1,6 +1,7 @@
 <div class="container d-flex justify-content-center">
   <div class="w-50">
-    <% @user.events.each do |event| %>
+    <h3>Events hosted by this user:</h3>
+    <% @user.hosting_events.each do |event| %>
       <div class="card pb-0">
         <div class="card-body pb-0 text-dark">
           <h5 class="card-title">Event: <%= event.name %></h5>
@@ -9,6 +10,16 @@
         </div>
       </div>
     <% end %>
-    <%= link_to 'Home', root_path, class: 'btn btn-primary my-3' %>
+
+    <h3 class="mt-3">This user is comming to these events:</h3>
+    <% @user.invited_events.each do |event| %>
+      <div class="card pb-0">
+        <div class="card-body pb-0 text-dark">
+          <h5 class="card-title">Event: <%= event.name %></h5>
+          <p class="card-text">Location: <%= event.location %><p>
+          <p class="card-text">Date: <%= event.date %><p>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

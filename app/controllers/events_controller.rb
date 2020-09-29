@@ -16,7 +16,7 @@ class EventsController < ApplicationController
 
     @event = Event.new(event_params)
     @event.hoster_id = current_user.id
-    
+
      if @event.save
       flash.notice = "Event #{@event.name} created!"
       redirect_to root_path
@@ -24,7 +24,7 @@ class EventsController < ApplicationController
       flash.now[:alert] = "Invalid post"
       render :new
      end
-    
+
     ## redirect_to event_path(@event)
   end
 

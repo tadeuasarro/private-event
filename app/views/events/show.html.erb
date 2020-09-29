@@ -1,2 +1,15 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<div class='container d-flex justify-content-center'>
+  <div class="w-50">
+    <h3>List of invited people:</h3>
+    <% @event.invited_users.each do |iu| %>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title"><%= iu.username.capitalize %></h5>
+          <h6 class="card-subtitle"><%= iu.email %></h6>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
