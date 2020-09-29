@@ -1,4 +1,6 @@
 module UsersHelper
+
+    
     private
 
     def user_sign_in?

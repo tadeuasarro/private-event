@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  include UsersHelper
   def index
     @events = Event.all
   end
@@ -12,11 +13,19 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = current_user.events.build(event_params)
-    @event.save
 
-    flash.notice = "Event #{@event.name} created!"
-    redirect_to event_path(@event)
+    @event = Event.new(event_params)
+    @event.hoster_id = current_user.id
+    
+     if @event.save
+      flash.notice = "Event #{@event.name} created!"
+      redirect_to root_path
+     else
+      flash.now[:alert] = "Invalid post"
+      render :new
+     end
+    
+    ## redirect_to event_path(@event)
   end
 
   private
