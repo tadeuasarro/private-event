@@ -15,22 +15,25 @@
   </head>
 
   <body>
-     <% if flash[:notice]%>
-      <p> <%= notice %> </p>
-     <% end %>
-     <% if flash[:alert]%>
-      <p> <%= alert %> </p>
-     <% end %>
+    <% if flash[:notice]%>
+      <div class="d-flex justify-content-center p-2 alert alert-warning">
+        <p> <%= notice %> </p>
+      </div>
+    <% end %>
+    <% if flash[:alert]%>
+      <div class="d-flex justify-content-center p-2 alert alert-warning">
+        <p> <%= alert %> </p>
+      </div>
+    <% end %>
 
-     <div class="d-flex">
+     <div class="d-flex justify-content-end my-2">
       <% if user_sign_in? %>
-        <div>
-          <%= current_user.username %>
+        <div class="mx-3">
+          <span class="btn"><%= current_user.username %></span>
         </div>
-        <div>
-          <%= link_to "Log out", sessions_destroy_path%>
+        <div class="my -3 ml-3 mr-5">
+          <%= link_to "Log out", sessions_destroy_path, class: 'btn btn-warning' %>
         </div>
-        
       <% end %>
      </div>
     <%= yield %>

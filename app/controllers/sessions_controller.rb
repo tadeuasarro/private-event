@@ -5,12 +5,12 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(session_params)
-    
+
     if @user
       session[:user_id] = @user.id
-      redirect_to root_path, notice: "Loged in"
+      redirect_to root_path, notice: "Logged in"
     else
-      flash.now[:alert] = "Invalid Username"
+      flash.now[:alert] = "Invalid Username!"
       @user = User.new
       render :new
     end
@@ -18,10 +18,10 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path, notice: "log out"
+    redirect_to root_path, notice: "Logged out"
   end
 
-  private 
+  private
 
   def session_params
     params.require(:user).permit(:username)
