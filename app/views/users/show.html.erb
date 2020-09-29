@@ -1,0 +1,13 @@
+<div class="container mt-5 d-flex justify-content-center">
+  <div class="w-25">
+    <div class="my-3">
+      <span>Username:</span>
+      <%= @user.username %>
+    </div>
+    <div class="my-3">
+      <span>Email:</span>
+      <%= @user.email %>
+    </div>
+    <%= link_to 'Home', root_path, class: 'btn btn-primary' %>
+  </div>
+</div>
