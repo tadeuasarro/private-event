@@ -15,6 +15,24 @@
   </head>
 
   <body>
+     <% if flash[:notice]%>
+      <p> <%= notice %> </p>
+     <% end %>
+     <% if flash[:alert]%>
+      <p> <%= alert %> </p>
+     <% end %>
+
+     <div class="d-flex">
+      <% if user_sign_in? %>
+        <div>
+          <%= current_user.username %>
+        </div>
+        <div>
+          <%= link_to "Log out", sessions_destroy_path%>
+        </div>
+        
+      <% end %>
+     </div>
     <%= yield %>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

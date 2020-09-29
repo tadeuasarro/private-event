@@ -15,10 +15,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def sign_in
-    session[:login_session] = {username: @user.username}
-  end
-
   private
 
   def user_params
