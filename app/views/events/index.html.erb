@@ -1,7 +1,8 @@
 <div class="container d-flex justify-content-center">
-  <div class="w-50">
-    <h3>All listed events</h3>
-    <% @events.each do |event| %>
+
+  <div class="w-50 pt-3">
+    <h3>Upcoming events</h3>
+    <% @upcoming_events.each do |event| %>
       <div class="card pb-0 mb-3">
         <div class="card-body pb-0 text-dark">
           <h5 class="card-title">Event: <%= event.name %></h5>
@@ -12,5 +13,19 @@
         </div>
       </div>
     <% end %>
-    </div>
+
+    <h3>Previous events</h3>
+    <% @previous_events.each do |event| %>
+      <div class="card pb-0 mb-3">
+        <div class="card-body pb-0 text-dark">
+          <h5 class="card-title">Event: <%= event.name %></h5>
+          <p class="card-text">Location: <%= event.location %><p>
+          <p class="card-text">Date: <%= event.date %><p>
+          <%= link_to event.hosting_user.username.capitalize, user_path(event.hosting_user), class: 'badge badge-light' %>
+          <%= link_to 'Details', event_path(event), class: 'badge badge-dark' %>
+        </div>
+      </div>
+    <% end %>
   </div>
+
+</div>

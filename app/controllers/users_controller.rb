@@ -14,12 +14,12 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
-    @upcomming_events = []
+    @upcoming_events = []
     @previous_events =  []
 
     @user.invited_events.each do |event|
       if event.date >= Date.today
-        @upcomming_events.push(event)
+        @upcoming_events.push(event)
       else
         @previous_events.push(event)
       end

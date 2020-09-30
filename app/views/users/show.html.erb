@@ -2,7 +2,7 @@
   <div class="w-50">
     <h3>Events hosted by this user:</h3>
     <% @user.hosting_events.each do |event| %>
-      <div class="card pb-0">
+      <div class="card pb-0 mb-3">
         <div class="card-body pb-0 text-dark">
           <h5 class="card-title">Event: <%= event.name %></h5>
           <p class="card-text">Location: <%= event.location %><p>
@@ -11,9 +11,9 @@
       </div>
     <% end %>
 
-    <h3 class="mt-3">This user is comming to these events:</h3>
-    <% @upcomming_events.each do |event| %>
-      <div class="card pb-0">
+    <h3 class="mt-3">This user is coming to these events:</h3>
+    <% @upcoming_events.each do |event| %>
+      <div class="card pb-0 mb-3">
         <div class="card-body pb-0 text-dark">
           <h5 class="card-title">Event: <%= event.name %></h5>
           <p class="card-text">Location: <%= event.location %><p>
@@ -24,7 +24,7 @@
 
     <h3 class="mt-3">This user attended to these events:</h3>
     <% @previous_events.each do |event| %>
-      <div class="card pb-0">
+      <div class="card pb-0 mb-3">
         <div class="card-body pb-0 text-dark">
           <h5 class="card-title">Event: <%= event.name %></h5>
           <p class="card-text">Location: <%= event.location %><p>
