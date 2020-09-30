@@ -14,17 +14,16 @@ class EventsController < ApplicationController
   end
 
   def create
-
     @event = Event.new(event_params)
     @event.hoster_id = current_user.id
 
-     if @event.save
+    if @event.save
       flash.notice = "Event #{@event.name} created!"
       redirect_to root_path
-     else
-      flash.now[:alert] = "Invalid post"
+    else
+      flash.now[:alert] = 'Invalid post'
       render :new
-     end
+    end
 
     ## redirect_to event_path(@event)
   end
@@ -34,5 +33,4 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:name, :location, :date)
   end
-
 end

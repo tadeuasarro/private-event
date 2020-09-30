@@ -12,10 +12,10 @@ class InvitationsController < ApplicationController
 
     if current_user.id == @event.hoster_id
       if @invitation.save
-        flash.notice = "User invited successfully!"
+        flash.notice = 'User invited successfully!'
         redirect_to root_path
       else
-        flash.now[:alert] = "User could not be invited, check the input information!"
+        flash.now[:alert] = 'User could not be invited, check the input information!'
         render :new
       end
     else
@@ -23,5 +23,4 @@ class InvitationsController < ApplicationController
       render :new
     end
   end
-
 end

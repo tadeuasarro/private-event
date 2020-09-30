@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     @upcoming_events = []
-    @previous_events =  []
+    @previous_events = []
 
     @user.invited_events.each do |event|
       if event.date >= Date.today
