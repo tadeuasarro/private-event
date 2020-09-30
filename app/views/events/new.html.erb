@@ -1,0 +1,23 @@
+<div class="container mt-5 d-flex justify-content-center">
+  <div class="w-25">
+    <%= form_for @event do |e| %>
+      <div class="form-group">
+        <%= e.label :name %>
+        <%= e.text_field :name, placeholder: 'Event name', class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= e.label :location %>
+        <%= e.text_field :location, placeholder: 'Event location', class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= e.label :date %>
+        <%= e.date_select :date, placeholder: 'Event date', class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= e.submit 'Create event', class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= @event.errors.full_messages %>
