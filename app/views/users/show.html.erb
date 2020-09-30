@@ -1,7 +1,8 @@
 <div class="container d-flex justify-content-center">
   <div class="w-50">
-    
+    <% unless @user.hosting_events.empty? %>
     <h3>Events hosted by this user:</h3>
+    <% end %>
     <% @user.hosting_events.each do |event| %>
       <div class="card pb-0 mb-3">
         <div class="card-body pb-0 text-dark">
@@ -12,8 +13,9 @@
       </div>
     <% end %>
     
-    
+     <% unless @upcoming_events.empty? %>
     <h3 class="mt-3">This user is coming to these events:</h3>
+    <% end %>
     <% @upcoming_events.each do |event| %>
       <div class="card pb-0 mb-3">
         <div class="card-body pb-0 text-dark">
@@ -23,8 +25,9 @@
         </div>
       </div>
     <% end %>
-   
+     <% unless @previous_events.empty? %>
     <h3 class="mt-3">This user attended to these events:</h3>
+    <% end %>
     <% @previous_events.each do |event| %>
       <div class="card pb-0 mb-3">
         <div class="card-body pb-0 text-dark">

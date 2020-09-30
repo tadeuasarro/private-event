@@ -1,20 +1,8 @@
 class EventsController < ApplicationController
   include UsersHelper
-  
+
   def index
     @events = Event.all
-
-    @upcoming_events = []
-    @previous_events = []
-
-    @events.each do |event|
-      if event.date >= Date.today
-        @upcoming_events.push(event)
-      else
-        @previous_events.push(event)
-      end
-    end
-
   end
 
   def show
