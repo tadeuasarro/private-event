@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   include UsersHelper
+  
   def index
     @events = Event.all
 

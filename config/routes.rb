@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
   post 'sessions/create'
   get 'sessions/destroy'
-
+  
   root to: 'events#index'
 
   resources :users, only: [:new, :create, :show]
