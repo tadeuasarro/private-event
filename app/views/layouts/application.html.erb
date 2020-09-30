@@ -32,6 +32,9 @@
           <%= link_to "Home", root_path, class: 'btn btn-primary' %>
         </div>
         <div class="mx-3">
+          <%= link_to "Create invitation", new_invitation_path, class: 'btn btn-light' %>
+        </div>
+        <div class="mx-3">
           <%= link_to "Create new event", new_event_path, class: 'btn btn-light' %>
         </div>
         <div class="mx-3">
@@ -41,10 +44,13 @@
           <%= link_to "Log out", sessions_destroy_path, class: 'btn btn-warning' %>
         </div>
       <% else %>
-        <div class="my -3 ml-3 mr-5">
+        <div class="mx-3">
+          <%= link_to "Home", root_path, class: 'btn btn-primary' %>
+        </div>
+        <div class="mx-3">
           <%= link_to "Log in", sessions_new_path, class: 'btn btn-success' %>
         </div>
-        <div class="my -3 ml-3 mr-5">
+        <div class=" ml-3 mr-5">
           <%= link_to "Sign up", new_user_path, class: 'btn btn-info' %>
         </div>
       <% end %>
