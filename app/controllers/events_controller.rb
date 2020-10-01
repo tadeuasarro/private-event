@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
   include UsersHelper
 
+  before_action :require_login
+
   def index
     @events = Event.all
   end
@@ -24,8 +26,6 @@ class EventsController < ApplicationController
       flash.now[:alert] = 'Invalid post'
       render :new
     end
-
-    ## redirect_to event_path(@event)
   end
 
   private

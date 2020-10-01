@@ -1,5 +1,8 @@
 class InvitationsController < ApplicationController
   include UsersHelper
+
+  before_action :require_login
+
   def new
     @invitation = Invitation.new
   end

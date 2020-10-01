@@ -8,4 +8,11 @@ module UsersHelper
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
+
+  def require_login
+    unless user_sign_in?
+      flash.notice = 'You have to be logged in to access that page'
+      redirect_to root_path
+    end
+  end
 end
