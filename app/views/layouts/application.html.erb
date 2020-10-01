@@ -29,7 +29,7 @@
      <div class="d-flex justify-content-end my-2">
       <% if user_sign_in? %>
         <div class="mx-3">
-          <%= link_to "Home", root_path, class: 'btn btn-primary' %>
+          <%= link_to "Home", events_path, class: 'btn btn-primary' %>
         </div>
         <div class="mx-3">
           <%= link_to "Create invitation", new_invitation_path, class: 'btn btn-light' %>
@@ -45,7 +45,7 @@
         </div>
       <% else %>
         <div class="mx-3">
-          <%= link_to "Home", root_path, class: 'btn btn-primary' %>
+          <%= link_to "Home", events_path, class: 'btn btn-primary' %>
         </div>
         <div class="mx-3">
           <%= link_to "Log in", sessions_new_path, class: 'btn btn-success' %>

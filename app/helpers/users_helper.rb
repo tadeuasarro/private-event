@@ -10,9 +10,9 @@ module UsersHelper
   end
 
   def require_login
-    unless user_sign_in?
-      flash.notice = 'You have to be logged in to access that page'
-      redirect_to root_path
-    end
+    return if user_sign_in?
+
+    flash.notice = 'You have to be logged in to access that page'
+    redirect_to root_path
   end
 end
