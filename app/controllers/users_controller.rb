@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  include UsersHelper
+
+  before_action :require_logout, only:[:new]
+
   def new
     @user = User.new
   end
