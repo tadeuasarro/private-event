@@ -16,7 +16,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
+    @event = current_user.hosting_events.build(event_params)
     @event.hoster_id = current_user.id
 
     if @event.save
