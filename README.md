@@ -11,6 +11,17 @@
 - Create relations between User and Event models (hosting_user)
 - Create relations between User and Event models through the Invitation model (invited_user)
 
+#### Getting started
+###### To run this application locally, follow these steps:
+- Install [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
+- Install [Rails](https://guides.rubyonrails.org/v5.0/getting_started.html)
+- Open CMD
+- Clone this repository
+- Navigate to the root directory, that's been cloned (e.g.: /Documents/private-events)
+- Run `rake db:migrate`
+- Run `rails server`
+- Open your favorite web browser and visit localhost:3000
+
 ## Authors
 
 👤 **Tadeu Sarro**

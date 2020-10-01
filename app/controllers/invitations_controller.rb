@@ -29,7 +29,6 @@ class InvitationsController < ApplicationController
       @invitation.event_id = (Event.find_by name: params[:invitation][:events][:name]).id
       @event = Event.find_by name: params[:invitation][:events][:name]
     end
-    return @event
+    @event
   end
-
 end
