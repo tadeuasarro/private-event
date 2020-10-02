@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show]
   resources :invitations, only: [:new, :create]
-  resources :events, except: [:delete, :update, :edit]
+  resources :events, only: [:new, :create, :show, :index]
 
   get 'sessions/new'
   post 'sessions/create'

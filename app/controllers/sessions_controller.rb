@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
     @user = User.new
   end
 
-  def show; end
+  def show
+  end
 
   def create
     @user = User.find_by(session_params)
