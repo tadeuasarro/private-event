@@ -1,6 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature "Forms", type: :feature do
+# rubocop:disable Metrics/BlockLength
+RSpec.feature 'Forms', type: :feature do
   scenario 'User should be valid without email, for its not required' do
     u1 = User.new(username: 'tadeu')
     expect(u1.valid?).to eq(true)
@@ -15,11 +16,11 @@ RSpec.feature "Forms", type: :feature do
     expect(e1.valid?).to eq(true)
   end
   scenario 'Event should be valid without location, for its not required' do
-    e2 = Event.new(name: 'Tadeu', date: '2020/10/02', hosting_user:  User.new)
+    e2 = Event.new(name: 'Tadeu', date: '2020/10/02', hosting_user: User.new)
     expect(e2.valid?).to eq(true)
   end
   scenario 'Event should be valid without date, for its not required' do
-    e3 = Event.new(name: 'Tadeu', location: 'Tijuana', hosting_user:  User.new)
+    e3 = Event.new(name: 'Tadeu', location: 'Tijuana', hosting_user: User.new)
     expect(e3.valid?).to eq(true)
   end
   scenario 'Event should be invalid, for it has no hosting_user' do
@@ -46,3 +47,5 @@ RSpec.feature "Forms", type: :feature do
     expect(i3.valid?).to eq(true)
   end
 end
+
+# rubocop:enable Metrics/BlockLength

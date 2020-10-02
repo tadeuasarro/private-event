@@ -1,14 +1,13 @@
 class SessionsController < ApplicationController
   include UsersHelper
 
-  before_action :require_logout, only:[:new]
+  before_action :require_logout, only: [:new]
 
   def new
     @user = User.new
   end
 
-  def show
-  end
+  def show; end
 
   def create
     @user = User.find_by(session_params)

@@ -18,6 +18,5 @@ module UsersHelper
 
   def require_logout
     redirect_to events_path if user_sign_in?
-
   end
 end
