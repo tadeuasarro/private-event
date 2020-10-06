@@ -15,17 +15,6 @@
   </head>
 
   <body>
-    <% if flash[:notice]%>
-      <div class="d-flex justify-content-center p-2 alert alert-warning">
-        <p> <%= notice %> </p>
-      </div>
-    <% end %>
-    <% if flash[:alert]%>
-      <div class="d-flex justify-content-center p-2 alert alert-warning">
-        <p> <%= alert %> </p>
-      </div>
-    <% end %>
-
      <div class="d-flex justify-content-end my-2">
       <% if user_sign_in? %>
         <div class="mx-3">

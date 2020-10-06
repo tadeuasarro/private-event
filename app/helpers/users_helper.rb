@@ -19,4 +19,16 @@ module UsersHelper
   def require_logout
     redirect_to events_path if user_sign_in?
   end
+
+  def hosting_event_check(event)
+    'Events hosted by this user: ' unless event.empty?
+  end
+
+  def past_event_user_check(event)
+    'Events this user attended to: ' unless event.empty?
+  end
+
+  def upcoming_event_user_check(event)
+    'This user is coming to these events: ' unless event.empty?
+  end
 end
