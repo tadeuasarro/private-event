@@ -1,0 +1,39 @@
+<div class="container d-flex justify-content-center">
+  <div class="w-50">
+
+    <h3><%= hosting_event_check(@hosting_events) %></h3>
+    <% @hosting_events.each do |event| %>
+      <div class="card pb-0 mb-3">
+        <div class="card-body pb-0 text-dark">
+          <h5 class="card-title">Event: <%= event.name %></h5>
+          <p class="card-text">Location: <%= event.location %><p>
+          <p class="card-text">Date: <%= event.date %><p>
+        </div>
+      </div>
+    <% end %>
+
+    <h3 class="mt-3"><%= upcoming_event_user_check(@upcoming_events) %></h3>
+    <% @upcoming_events.each do |event| %>
+      <div class="card pb-0 mb-3">
+        <div class="card-body pb-0 text-dark">
+          <h5 class="card-title">Event: <%= event.name %></h5>
+          <p class="card-text">Location: <%= event.location %><p>
+          <p class="card-text">Date: <%= event.date %><p>
+        </div>
+      </div>
+    <% end %>
+
+
+    <h3 class="mt-3"><%= past_event_user_check(@upcoming_events) %></h3>
+    <% @past_events.each do |event| %>
+      <div class="card pb-0 mb-3">
+        <div class="card-body pb-0 text-dark">
+          <h5 class="card-title">Event: <%= event.name %></h5>
+          <p class="card-text">Location: <%= event.location %><p>
+          <p class="card-text">Date: <%= event.date %><p>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>
